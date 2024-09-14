@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonShine's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    
+    <nav>
+        <div class="logo">
+            <img src="Logo-white.svg">
+        </div>
+        <div class="nav-links">
+            <a class="selected" href="index2.html">Home</a>
+            <a href="read.html">Read</a>
+            <a href="about.html">About</a>
+            
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="intro">
+            <h1>LET THE MOON SHINE</h1>
+            <br>
+            <br>
+            <p>Helloooo! So happy to see you here! <br>
+                <br>
+                Welcome to MoonShine’s <br>
+                <br>
+                I may have an idea of why you are here. What you are <br>
+                looking for is closer than what you think! In this particular <br>
+                case, it’s right down below! You will find all of my written <br>
+                works in the section below, available for you to read for free! <br>
+                <br>
+                Don’t forget to also visit my socials section and follow me to <br>
+                know about any upcoming new works and updates! <br>
+                <br>
+                I’m so happy you were able to find this spot! Happy reading <br>
+                and see you soon :) <br>
+                <br>
+                xoxo, <br>
+                m</p>
+        </div>
+
+        <img src="GALAXY.svg"> 
+        <div class="background-image">
+            <img src="Meteors.svg"> 
+        </div>
+    
+    </div>
+
+    <div class="work">
+        <h1>MY WORK</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="moonwork.svg">
+        <div class="work-links">
+            <a href="read/novels.html">Novels</a>
+            <a href="read/projects.html">Projects</a>
+            <a href="read/moonsblog.html">Moon's Blog</a>
+            <a href="read/reviews.html">Reviews</a>
+            <a href="read/graphics.html">Graphics</a>
+            <a href="read/videos.html">Videos</a>
+            <a href="read/stories.html">Short Stories</a>
+            <a href="read/gallery.html">Gallery</a>
+        </div>
+
+    </div>
+    
+    <script> // Define the options for the Intersection Observer
+        const options = {
+            rootMargin: '0px',
+            threshold: 0.1 // Adjust as needed
+        };
+        
+        // Function to handle the intersection
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                // Delay adding 'visible' class to all children of .work after 5 seconds
+                setTimeout(() => {
+                    entry.target.querySelectorAll('*').forEach(element => {
+                        element.classList.add('visible');
+                    });
+                }, 4000); // Delay animation start by 5 seconds
+                observer.unobserve(entry.target); // Stop observing after animation starts
+            }
+        });
+    }   
+        
+        // Create a new Intersection Observer
+        const observer = new IntersectionObserver(handleIntersection, options);
+        
+        // Observe the .work section
+        observer.observe(document.querySelector('.work'));
+    </script>
+
+</body>
+
+</html>
+        
+

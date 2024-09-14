@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Benne&family=Bilbo+Swash+Caps&family=Cedarville+Cursive&family=Cinzel:wght@400..900&family=Sawarabi+Mincho&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+/* Safari 10+ (Chrome, Safari, Opera) */
+@media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) {
+    /* Safari and Chrome */
+    .work img {
+        position: absolute;
+        display: block;
+        margin: 20px auto; /* Adjust the top margin as needed */
+        box-shadow: none;
+        width: 42%; /* Adjust the size as needed */
+        height: auto; /* Maintain aspect ratio */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body > :last-child {
+    margin-bottom: 100px;
+}
+  
+body {
+    color: white;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #562D54 0%, #161B33 25.5%, #161B33 50%, #161B33 83%, #562D54 95.5%);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+img{
+    object-fit: cover;
+    object-position: top;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0); 
+}
+
+
+nav{
+    padding: 40px 148px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 100;
+    font-family: "Sofia Sans", sans-serif;
+    z-index: 2;
+}
+
+nav .logo{
+    stroke: none;
+    display: flex;
+    align-items: center;
+
+}
+
+nav .logo img{
+    margin: 10px;
+    width: auto;
+    height: auto;
+}
+
+nav .logo a{
+    font-size: 16px;
+    position: fixed;
+}
+
+nav .nav-links{
+    display: flex;
+    gap: 80px;
+}
+
+.main{
+    padding: 20px 148px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px);
+}
+
+.intro{
+    text-align: left;
+    z-index: 1;
+}
+
+.intro h1{
+    font-family: "Sawarabi Mincho", serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px; 
+    letter-spacing: 9.6px;
+}
+
+.intro p{
+    font-family: "Aref Ruqaa", serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.main img{
+    width: auto;
+    position: absolute;
+    top: 20%;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.background-image{
+    position: absolute;
+    background-image: url('Meteors.svg');
+    background-size: cover; 
+    background-position: top;
+    box-shadow: none;
+    z-index: -2;
+    right: 30%;
+    top: 0;
+}
+
+.work {
+    text-align: center; /* Center text and child elements */
+    padding: 20px; /* Add padding if needed */
+    position: relative; /* Positioning context */
+}
+
+
+.work h1{
+    font-family: "Sawarabi Mincho", serif;
+    font-size: 28px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px; 
+    letter-spacing: 9.6px;
+    margin-bottom: 20px; /* Space below title */
+}
+
+@keyframes rotateMoon {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+
+.work element {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Add transition for smooth opacity change */
+}
+
+/* Styles for elements when they become visible */
+.work element.visible {
+    opacity: 1;
+    /* Add additional animation properties here if needed */
+}
+
+
+.work img {
+    position: absolute;
+    display: block;
+    margin: 45px auto; /* Adjust the top margin as needed */
+    box-shadow: none;
+    width: 42%; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.work img.visible {
+  animation: rotateMoon 100s infinite linear; /* Apply animation */
+}
+
+.work-links {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Adjust the gap between links as needed */
+    margin-bottom: 500px; /* Space below the links */
+    position: absolute; /* Ensure positioning is consistent */
+    top: 460%; /* Increase this value to move the links further down */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    margin-bottom: 50px; /* Space below the links */
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateY(-420px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateY(-420px) rotate(-360deg);
+    }
+}
+
+
+.work-links a {
+    display: flex;
+    width: 150px; /* Adjust size of the links */
+    height: 30px; /* Corrected height property */
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 22px;
+    transform-origin: 50% 100%;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+.work-links a:hover {
+    opacity: 0.7;
+}
+
