@@ -10,99 +10,114 @@
 </head>
 
 <body>
-    
+    <img src="assets/icons/Meteors.svg" class="meteor-img">
+
     <nav>
         <div class="logo">
             <img src="assets/icons/Logo-white.svg">
         </div>
         <div class="nav-links">
-            <a class="selected" href="index2.html">Home</a>
-            <a href="assets/pages/read.html">Read</a>
-            <a href="assets/pages/about.html">About</a>
+            <a class="selected" href="index2.html">home</a>
+            <a href="assets/pages/work.html">work</a>
+            <a href="assets/pages/contact.html">contact</a>
             
         </div>
     </nav>
 
     <div class="main">
         <div class="intro">
-            <h1>LET THE MOON SHINE</h1>
+            <h1>MIA SALINAS</h1>
             <br>
             <br>
-            <p>Helloooo! So happy to see you here! <br>
+            <p>Hi there! Welcome to my portfolio!<br>
+                I’m currently studying computer science and media studies at UC Berkeley.<br>
+                And I guess I do writing as a hobby, feel free to check it out!<br>
+                Hope you like it!<br>
                 <br>
-                Welcome to MoonShine’s <br>
-                <br>
-                I may have an idea of why you are here. What you are <br>
-                looking for is closer than what you think! In this particular <br>
-                case, it’s right down below! You will find all of my written <br>
-                works in the section below, available for you to read for free! <br>
-                <br>
-                Don’t forget to also visit my socials section and follow me to <br>
-                know about any upcoming new works and updates! <br>
-                <br>
-                I’m so happy you were able to find this spot! Happy reading <br>
-                and see you soon :) <br>
-                <br>
-                xoxo, <br>
-                m</p>
+                -m
+            </p>
+
+            <div class="skills">
+                <div class="column">
+                    <h2>DESIGN</h2>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Photoshop</li>
+                        <li>Canva</li>
+                        <li>Illustrator</li>
+                        <li>Capcut</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2>DEVELOPMENT</h2>
+                    <ul>
+                        <li>HTML / CSS</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <img src="assets/icons/GALAXY.svg"> 
-        <div class="background-image">
-            <img src="assets/icons/Meteors.svg"> 
-        </div>
     
     </div>
 
     <div class="work">
-        <h1>MY WORK</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <img src="assets/icons/moonwork.svg">
-        <div class="work-links">
-            <a href="assets/pages/novels.html">Novels</a>
-            <a href="assets/pages/projects.html">Projects</a>
-            <a href="assets/pages/moonsblog.html">Moon's Blog</a>
-            <a href="assets/pages/reviews.html">Reviews</a>
-            <a href="assets/pages/graphics.html">Graphics</a>
-            <a href="assets/pages/videos.html">Videos</a>
-            <a href="assets/pages/stories.html">Short Stories</a>
-            <a href="assets/pages/gallery.html">Gallery</a>
-        </div>
+        <h1>WORK</h1>
 
+        <div class="moon-orbit-desktop">
+            <img src="assets/icons/moonwork.svg" class="moon-cycle" alt="Moon phases">
+            <div class="orbit-links-desktop">
+                <a href="assets/pages/blog.html"><span>Blog</span></a>
+                <a href="assets/pages/motion.html"><span>Motion</span></a>
+                <a href="assets/pages/graphics.html"><span>Graphics</span></a>
+                <a href="assets/pages/uiux.html"><span>UI/UX</span></a>
+                <a href="assets/pages/projects.html"><span>Projects</span></a>
+                <a href="assets/pages/products.html"><span>Products</span></a>
+                <a href="assets/pages/photo.html"><span>Photography</span></a>
+                <a href="assets/pages/writing.html"><span>Creative Writing</span></a>
+            </div>
+        </div>
     </div>
-    
-    <script> // Define the options for the Intersection Observer
+
+    <div class="contact-section">
+        <div class="window-graphic">
+            <img src="assets/icons/window-cat.svg" alt="Window">
+        </div>
+        <div class="contact-text">
+            <h2>Contact me!</h2>
+            <p>mia.salinas@berkeley.edu</p>
+        </div>
+    </div>
+
+    <script> 
         const options = {
             rootMargin: '0px',
-            threshold: 0.1 // Adjust as needed
+            threshold: 0.1 
         };
         
-        // Function to handle the intersection
         function handleIntersection(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                // Delay adding 'visible' class to all children of .work after 5 seconds
-                setTimeout(() => {
+                    // Make elements visible (if you're using this for fade-ins)
                     entry.target.querySelectorAll('*').forEach(element => {
                         element.classList.add('visible');
                     });
-                }, 4000); // Delay animation start by 5 seconds
-                observer.unobserve(entry.target); // Stop observing after animation starts
-            }
-        });
-    }   
+
+                    // Start orbit animation immediately
+                    const orbit = document.querySelector('.orbit-links-desktop');
+                    if (orbit) orbit.classList.add('rotate');
+
+                    observer.unobserve(entry.target); // Stop watching once triggered
+                }
+            });
+        }   
         
-        // Create a new Intersection Observer
         const observer = new IntersectionObserver(handleIntersection, options);
-        
-        // Observe the .work section
         observer.observe(document.querySelector('.work'));
     </script>
+
 
 </body>
 
