@@ -284,7 +284,7 @@ nav .nav-links {
   padding: 100px 20px;
   text-align: left;
   font-family: "Cedarville Cursive", cursive;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* makes it stack on smaller screens */
 }
 
 .window-graphic {
@@ -307,6 +307,7 @@ nav .nav-links {
 
 .contact-text {
   color: white;
+  max-width: 400px; /* keeps text readable */
 }
 
 .contact-text h2 {
@@ -320,6 +321,42 @@ nav .nav-links {
   margin: 0;
 }
 
+.archive {
+  font-family: 'Sawarabi Mincho', serif;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.archive-button {
+  font-family: 'Sawarabi Mincho', serif;
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 24px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.archive-button:hover {
+  background: #8a30d9; /* darker red on hover */
+  transform: translateY(-2px);
+}
+
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .archive-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        padding: 14px 0;
+    }
+}
 
 
 /* cell */
