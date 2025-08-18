@@ -5,26 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mia's Blog</title>
+
+    <link rel="stylesheet" href="../css/style2.css">
+
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             font-family: "Sawarabi Mincho", serif;
             background: linear-gradient(180deg, #562D54 0%, #161B33 25.5%, #161B33 50%, #161B33 83%, #562D54 95.5%);
             color: white;
         }
 
+        /* Center blog content */
         .prompt {
-            width: 600px;
-            height: 600px;
-            background-color: rgba(255, 255, 255, 0.05);
+            max-width: 800px;
+            margin: 100px auto 50px auto; /* top margin for navbar */
             padding: 30px;
-            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
         }
 
         h1 {
@@ -44,6 +44,10 @@
 </head>
 
 <body>
+
+    <div id="navbar"></div>
+
+
     <div class="prompt">
         <h1>Week 4 Blog Post</h1>
         <p>
@@ -69,6 +73,8 @@
         It also reminds me of projects like Chicana Por Mi Raza that we discussed in class, which center stories often missing from traditional archives. The archive’s simplicity and clear structure are especially effective, and it resonates with my own project’s goal of preserving personal voice and self-authored creative work.
         
         <img src="../images/prompt3.png" alt="Prompt 3" style="max-width: 100%; height: auto; display: block; margin: 20px auto;">
+        <img src="../images/prompt3(2).png" alt="Prompt 3(2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto;">
+
 
         In contrast, I don’t think Humans of New York aligns well with my project. While I really like the platform and its mission, the people featured aren’t the ones writing their stories. Brandon Stanton interviews and photographs them, then writes the captions himself. Though this is still a powerful form of storytelling, it lacks the self-authorship I want to prioritize in my project. My focus is on people telling their own stories, in their own words, and exploring how that connects to identity and emotion. Additionally, I really liked the minimalistic but interactive layout of the website.
         
@@ -83,14 +89,31 @@
 
         <p>
         The topic I’m grounding on for my project is my “personal writing archive,” specifically stories I wrote during my childhood up until now. Storytelling has been a big part of my identity and creative life. I want to document it and reflect on how my ideas and voice have evolved.
-        I remember first starting writing during elementary school because of a writing contest my school was holding. I’m a very competitive person, so I wanted to win. I think it was something about dragons and fantasy and a group of friends trying to save their village from doom. I only got third place, but the process of writing gave me so much ecstasy, I thought, “Why not keep going?” I began writing more fantasy stories, and I even remember writing a fantasy series that I thought was going to be a bestselling trilogy (spoiler: it was never finished). I was like eleven years old, but a girl can dream. Even though most of these stories were written just for fun, they each kind of show what I cared about or how I saw the world at the time. I went from fantasy to mystery—who murdered the cheerleader in town or something like that. It was with that genre that I entered next year’s contest again, and this time I got first place. Ever since then, I haven’t stopped. I’ve explored different genres like romance, fiction, and historical. Even though most of them are just fun projects I haven’t really thought much of (most of them unfinished too), they’re pretty fun and help keep me grounded during hard times.
-        For this project, I’m thinking of including a mix of typed-up versions and maybe pictures of my brainstorming notes or outlines from my story process. That feels like a more personal, creative way of “archiving” than just uploading PDFs.
+        I remember first starting writing during elementary school because of a writing contest my school was holding. I’m a very competitive person, so I wanted to win. I think it was something about dragons and fantasy and a group of friends trying to save their village from doom. I only got third place, but the process of writing gave me so much ecstasy, I thought, “Why not keep going?” I began writing more fantasy stories, and I even remember writing a fantasy series that I thought was going to be a bestselling trilogy (spoiler: it was never finished). 
+        
+        I was around eleven years old, but a little girl can always dream. Even though most of these stories were written just for fun, they each kind of show what I cared about or how I saw the world at the time. I went from fantasy to mystery (who murdered the cheerleader in town or something like that). It was with that genre that I entered next year’s contest again, and this time I got first place. Ever since then, I haven’t stopped. I’ve explored different genres like romance, fiction, and historical. Even though most of them are just fun projects I haven’t really thought much of (most of them unfinished too), they’re pretty fun and help keep me grounded during hard times.
+        
+        Note: I recently found the cover of the first book I wrote for my school's writing competition! 
+        
+        (Translation: "The Purple Dragon" 
+        Back Cover: "In a small town, the legend of the Purple Dragon is told. A famous legend told by their ancestors, in which they said they had killed a dragon. Some believe it's a lie, others believe it was real. Until Mackenna, a girl from the town, along with her friends Jake, Will, and Alice, travel to the Purple Forest to discover the truth. You won't believe what they discover, or rather, who they run into.")
+        <img src="../images/prompt2.png" alt="Prompt 3(2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto;">
+
+        For this project, I’m thinking of including a mix of typed-up versions and maybe pictures of my brainstorming notes or outlines from my story process (just like the above). That feels like a more personal, creative way of “archiving” than just uploading PDFs.
         In terms of “ways of knowing,” I think memory and emotion play a huge part in how I’ll build this archive. A traditional archive might just focus on the final drafts, but mine is more about process: the cringey story drafts, the forgotten plot holes, the inspiration behind certain characters. I want to treat those imperfect pieces as important parts of the story, too. It’s not just about what I wrote, but also why I wrote it.
         I guess this challenges traditional ways of archiving because I’m not presenting polished, professional work. I’m archiving unfinished thoughts, childhood dreams, and a creative journey that’s still ongoing. It’s kind of exciting to treat those as valuable and worth remembering.
+        
         </p>
 
-
     </div>
+
+    <script>
+        fetch('../../navbar.html')  // adjust path depending on page folder
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>

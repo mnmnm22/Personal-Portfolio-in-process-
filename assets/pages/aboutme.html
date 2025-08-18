@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about me</title>
+
+    <link rel="stylesheet" href="../css/style2.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Sawarabi Mincho", serif;
+            background: linear-gradient(180deg, #562D54 0%, #161B33 25.5%, #161B33 50%, #161B33 83%, #562D54 95.5%);
+            color: white;
+        }
+
+        .page-content {
+        text-align: center;
+        }
+
+        .bio-section {
+        padding: 60px 20px;
+        }
+
+        .bio-container {
+        display: flex;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 40px;
+        }
+
+        .bio-image {
+        flex: 1 1 45%;
+        }
+
+        .bio-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        object-fit: cover;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .bio-text {
+        flex: 1 1 55%;
+        font-size: 20px;
+        line-height: 1.7;
+        }
+
+        .bio-text h2 {
+        margin-bottom: 16px;
+        }
+
+        @media (max-width: 840px) {
+        .bio-container {
+            flex-direction: column;
+            gap: 24px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <section class="bio-section">
+        <div class="bio-container">
+
+            <div class="bio-image">
+                <img src="/assets/images/Sunny.png" alt="Sunny">
+            </div>
+
+            <div class="bio-text">
+                <h2>About Me</h2>
+            <p>
+            Hey there! My name is Mia, a junior at UC Berkeley double majoring in Computer Science and Media Studies. I’m passionate about blending creativity and technology through media, marketing, UI/UX design, and coding. I love building digital experiences that are not only functional but also visually engaging.
+
+            I grew up in the Bay Area, but I’m originally from Peru (I moved to the U.S. in middle school!).
+
+            When I’m not working on projects, you can usually find me filming college lifestyle videos for my YouTube channel or writing something new.
+
+            Please enjoy this photo on the left (It's my dog Sunny)!
+            </p> 
+            </div>
+        </div>
+    </section>
+
+    <script>
+        fetch('../../navbar.html')  // path from pages folder to root
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+
+</body>
+
+</html>
