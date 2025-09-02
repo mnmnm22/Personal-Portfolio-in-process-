@@ -27,6 +27,14 @@
     <div class="message">
         Work in Progress!
     </div>
+
+    <script>
+        fetch('../../navbar.html')  // adjust path depending on page folder
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>
