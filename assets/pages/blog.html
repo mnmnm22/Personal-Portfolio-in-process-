@@ -8,42 +8,13 @@
 
     <link rel="stylesheet" href="../css/style2.css">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Sawarabi Mincho", serif;
-            background: linear-gradient(180deg, #562D54 0%, #161B33 25.5%, #161B33 50%, #161B33 83%, #562D54 95.5%);
-            color: white;
-        }
-
-        /* Center blog content */
-        .prompt {
-            max-width: 800px;
-            margin: 100px auto 50px auto; /* top margin for navbar */
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            overflow-y: auto;
-        }
-
-        h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: left;
-            white-space: pre-line;
-        }
-    </style>
+    
 
 </head>
 
 <body>
+    <div id="navbar"></div>
+    
     <script>
         fetch('../../navbar.html')  // adjust path depending on page folder
             .then(response => response.text())
