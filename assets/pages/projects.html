@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/logo-black.png">
     <title>Work in Progress</title>
     <style>
         body {
@@ -24,10 +25,8 @@
 </head>
 
 <body>
-    <div class="message">
-        Work in Progress!
-    </div>
-
+    <div id="navbar"></div>
+    
     <script>
         fetch('../../navbar.html')  // adjust path depending on page folder
             .then(response => response.text())
@@ -35,6 +34,8 @@
                 document.getElementById('navbar').innerHTML = data;
             });
     </script>
+
+
 </body>
 
 </html>
