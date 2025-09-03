@@ -5,16 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mia's Blog</title>
-
+    <link rel="icon" type="image/png" href="../images/logo-black.png">
     <link rel="stylesheet" href="../css/style2.css">
-
-    
-
+    <title>Coming soon!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Sawarabi Mincho", serif;
+            background: linear-gradient(180deg, #562D54 0%, #161B33 25.5%, #161B33 50%, #161B33 83%, #562D54 95.5%);
+            color: white;
+        }
+        .message {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
 </head>
 
 <body>
     <div id="navbar"></div>
-    
+
     <script>
         fetch('../../navbar.html')  // adjust path depending on page folder
             .then(response => response.text())
