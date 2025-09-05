@@ -4,29 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work in Progress</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: "Sawarabi Mincho", serif;
-            background: linear-gradient(180deg, #562D54 0%, #161B33 25.5%, #161B33 50%, #161B33 83%, #562D54 95.5%);
-            color: white;
-        }
-        .message {
-            text-align: center;
-            font-size: 24px;
-        }
-    </style>
+    <title>Mia's Projects</title>
+    <link rel="icon" type="image/png" href="../images/logo-black.png">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 
 <body>
-    <div class="message">
-        Work in Progress!
+    <div id="navbar"></div>
+    
+    <script>
+        fetch('../../navbar.html')  // adjust path depending on page folder
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+
+    <div class="project-intro">
+        <h1>UX/UI</h1>
     </div>
+
+    <section class="uxui">
+        <h2 class="section-title">Superhuman Email Designs</h2>
+
+        <p class="project-meta">
+            <strong>Student Organization:</strong> Open Project at Berkeley, 2025 | 
+            <strong>Role:</strong> Client tema, UX Designer, Researcher
+        </p>
+
+        <p class="project-tools"><strong>Tools Used:</strong> Figma, Photoshop, UX Research, SVG Exports</p>
+
+        <p>
+            Worked with the Superhuman team to design new email features focused on teachers and educational use, improving accessibility and usability. Conducted user research and created multiple UI concepts for email layouts. Below are some of the designs I created.
+        </p>
+
+        <div class="slideshow-container">
+            <img id="slideshow" src="../icons/superhuman/super.svg" alt="Superhuman Email Slideshow">
+        </div>
+
+        <script>
+            const images = [
+                "../icons/superhuman/super.svg",
+                "../icons/superhuman/super2.svg",
+                "../icons/superhuman/super3.svg",
+                "../icons/superhuman/super4.svg"
+            ];
+
+            let index = 0;
+            const slideshow = document.getElementById("slideshow");
+
+            setInterval(() => {
+                index = (index + 1) % images.length;
+                slideshow.src = images[index];
+            }, 3000); // change image every 3 seconds
+        </script>
+
+    </section>
+
+
 </body>
 
 </html>
