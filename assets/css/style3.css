@@ -40,6 +40,11 @@ body {
     width: 100%;
 }
 
+.project-title a {
+    font-size: inherit;      /* keep the same font size as the h2 */
+}
+
+
 .project-meta {
     font-size: 0.9rem;
     margin-bottom: 10px;            
@@ -93,6 +98,23 @@ body {
     border-radius: 12px;
     display: block;
 }
+
+.project2-image {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; /* space between images */
+    margin-top: 1rem;
+}
+
+.project2-image img {
+    width: 32%; /* three images side-by-side */
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
 
 /* Responsive behavior - stack on smaller screens */
 @media (max-width: 768px) {
