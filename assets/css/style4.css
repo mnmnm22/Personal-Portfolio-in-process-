@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Benne&family=Bilbo+Swash+Caps&family=Cedarville+Cursive&family=Cinzel:wght@400..900&family=Sawarabi+Mincho&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+
+body {
+    margin: 0;            
+    padding: 0;
+    font-family: "Sawarabi Mincho", serif;
+}
+
+.project-intro h1 {
+    font-family: "Sawarabi Mincho", serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: 9.6px;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    position: relative;
+}
+
+.tools-section {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.software-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;  /* This prevents wrapping to new lines */
+}
+
+.software-icons img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;  /* Prevents icons from getting smaller */
+}
+
+.project-section {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    text-align: left;
+}
+
+.project-title {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: white;
+    line-height: 1.4;
+}
+
+.project-roles {
+    margin-bottom: 30px;
+}
+
+.project-roles ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-roles li {
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.project-roles li:before {
+    content: "•";
+    color: white;
+    position: absolute;
+    left: 0;
+}
+
+.image-grid {
+  display: flex;
+  gap: 30px;                  /* space between images */
+  margin-top: 20px;
+  justify-content: center;     /* centers the row */
+  flex-wrap: nowrap;           /* keep in one row */
+}
+
+.image-grid img {
+  max-height: 250px;           /* slightly bigger images */
+  width: auto;                 /* keeps original aspect ratio */
+  flex-shrink: 1;              /* allows slight shrinking to prevent overflow */
+  object-fit: contain;         /* preserves ratio */
+  transition: opacity 0.5s ease; 
+  animation: subtle-blink 3s infinite; /* optional subtle blinking */
+}
+
+
+
+
+@keyframes subtle-blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.7; } /* only slightly faded */
+}
+
+
+
