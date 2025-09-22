@@ -8,6 +8,10 @@ body {
     min-height: 100vh;
     color: white;
     overflow-x: hidden;
+}
+
+/* Main content container - only affects the motion/video content */
+.main-content {
     position: relative;
     display: flex;
     flex-direction: column;
