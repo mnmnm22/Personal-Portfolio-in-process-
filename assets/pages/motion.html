@@ -23,125 +23,137 @@
             });
     </script>
 
-    <div class="project-intro">
-        <h1>MOTION</h1>
-    </div>
-
-    <div class="motion-img">
-        <img src="../videos/motion.png" alt="Main">
-    </div>
-
-    <div class="motion-section">
-        <div class="project-title">
-            I've been editing videos since 2017 across multiple platforms including CapCut, Filmora, and Adobe Premiere Pro. My work spans promotional content for UK Berkeley organisations and/or student clubs, marketing materials that follow trending formats, and personal projects for my dog style YouTube channel. Whether it's crafting short form content for social trends or developing aesthetic travel videos, I enjoy taking editing as a creative outlet to tell stories, match energy with music and keep up with the latest trends.
+    <!-- Wrap your main content in this container -->
+    <div class="main-content">
+        <div class="project-intro">
+            <h1>MOTION</h1>
         </div>
 
-        <div class="vid-tools-section">
-            <h3>Apps I use</h3>
-            <div class="vid-tools-icons1">
-                <img src="../images/logos/capcut.png" alt="Logo 1">
-                <img src="../images/logos/premier.png" alt="Logo 2">
-                <img src="../images/logos/filmora.png" alt="Logo 3">
+        <div class="motion-img">
+            <img src="../videos/motion.png" alt="Main">
+        </div>
+
+        <div class="motion-section">
+            <div class="project-title">
+                I've been editing videos since 2017 across multiple platforms including CapCut, Filmora, and Adobe Premiere Pro. My work spans promotional content for UK Berkeley organisations and/or student clubs, marketing materials that follow trending formats, and personal projects for my dog style YouTube channel. Whether it's crafting short form content for social trends or developing aesthetic travel videos, I enjoy taking editing as a creative outlet to tell stories, match energy with music and keep up with the latest trends.
             </div>
 
-            <h3>Shared On Platforms</h3>
-            <div class="vid-tools-icons2">
-                <img src="../images/logos/instagram.png" alt="Logo 1">
-                <img src="../images/logos/tiktok.png" alt="Logo 2">
-                <img src="../images/logos/yt.png" alt="Logo 3">
-                <img src="../images/logos/fb.png" alt="Logo 4">
+            <div class="vid-tools-section">
+                <div>
+                    <h3>Apps I use</h3>
+                    <div class="vid-tools-icons1">
+                        <img src="../images/logos/capcut.png" alt="Logo 1">
+                        <img src="../images/logos/premier.png" alt="Logo 2">
+                        <img src="../images/logos/filmora.png" alt="Logo 3">
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Shared On Platforms</h3>
+                    <div class="vid-tools-icons2">
+                        <img src="../images/logos/instagram.png" alt="Logo 1">
+                        <img src="../images/logos/tiktok.png" alt="Logo 2">
+                        <img src="../images/logos/yt.png" alt="Logo 3">
+                        <img src="../images/logos/fb.png" alt="Logo 4">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="vid-section">
-        <div class="vid-section-title">
-            Videos made for the following organizations: 
-            <br>
-            <br>
-            - UC Berkeley's Center for Organization Advising and Student Involvement Services
-            <br>
-            - Blue & Gold Yearbook</h3>
+        <div class="vid-section">
+            <div class="vid-section-title">
+                Videos made for the following organizations: 
+                <br>
+                <br>
+                - @UCBERKELEYOASIS
+                <br>
+                UC Berkeley's Center for Organization Advising and Student Involvement Services
+                <br>
+                <br>
+                - @CALBGYEARBOOK
+                <br>
+                Blue & Gold Yearbook
+            </div>
+
+            <div class="videos">
+                <video controls>
+                    <source src="../videos/b&g1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <video controls>
+                    <source src="../videos/oasis1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <video controls>
+                    <source src="../videos/oasis2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <video controls>
+                    <source src="../videos/oasis3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <button class="carousel-nav carousel-prev">❮</button>
+                <button class="carousel-nav carousel-next">❯</button>
+            </div>
+
+            <div class="video-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
         </div>
-
-        <div class="videos">
-            <video controls>
-                <source src="../videos/b&g1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <video controls>
-                <source src="../videos/oasis1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <video controls>
-                <source src="../videos/oasis2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <video controls>
-                <source src="../videos/oasis3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <button class="carousel-nav carousel-prev">❮</button>
-            <button class="carousel-nav carousel-next">❯</button>
-        </div>
-
-        <div class="video-indicators">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-        </div>
-    </div>
-    
-    
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videos = document.querySelectorAll('.videos video');
-            const indicators = document.querySelectorAll('.indicator');
-            const prevBtn = document.querySelector('.carousel-prev');
-            const nextBtn = document.querySelector('.carousel-next');
-            
-            let currentVideoIndex = 0;
-
-            // Show first video initially
-            if (videos.length > 0) {
-                videos[0].classList.add('active');
-            }
-            
-            function showVideo(index) {
-                videos.forEach(video => video.classList.remove('active'));
-                if (videos[index]) videos[index].classList.add('active');
-
-                indicators.forEach((indicator, i) => {
-                    indicator.classList.toggle('active', i === index);
-                });
-            }
-            
-            nextBtn.addEventListener('click', () => {
-                currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-                showVideo(currentVideoIndex);
-            });
-            
-            prevBtn.addEventListener('click', () => {
-                currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
-                showVideo(currentVideoIndex);
-            });
-            
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    currentVideoIndex = index;
-                    showVideo(currentVideoIndex);
-                });
-            });
-        });
-
-    </script>
-
+    </div> <!-- End of main-content -->
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.videos video');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    let currentVideo = 0;
+    
+    function showVideo(index) {
+        // Hide all videos
+        videos.forEach(video => video.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Show current video
+        videos[index].classList.add('active');
+        indicators[index].classList.add('active');
+    }
+    
+    function nextVideo() {
+        currentVideo = (currentVideo + 1) % videos.length;
+        showVideo(currentVideo);
+    }
+    
+    function prevVideo() {
+        currentVideo = (currentVideo - 1 + videos.length) % videos.length;
+        showVideo(currentVideo);
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextVideo);
+    prevBtn.addEventListener('click', prevVideo);
+    
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentVideo = index;
+            showVideo(currentVideo);
+        });
+    });
+    
+    // Initialize first video
+    showVideo(0);
+});
+</script>
 
 </html>
