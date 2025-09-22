@@ -7,17 +7,13 @@
     <title>Mia's Blog</title>
     <link rel="icon" type="image/png" href="../images/logo-black.png">
     <link rel="stylesheet" href="../css/style2.css">
-
+    <link rel="stylesheet" href="../css/style5.css">
 </head>
 
 <body>
     <img src="../icons/Meteors.svg" class="meteor-img">
     
     <div id="navbar"></div>
-
-    <div class="message-container">
-        <div class="message">Coming soon!</div>
-    </div>
 
     <script>
         fetch('../../navbar.html')  // adjust path depending on page folder
@@ -27,23 +23,125 @@
             });
     </script>
 
-    <style>
-        /* Keep the message centered only */
-        .message-container {
-            color: white;
-            display: flex;
-            margin: 0;
-            font-family: "Sawarabi Mincho", serif;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px); /* subtract navbar height approx. */
-        }
+    <div class="project-intro">
+        <h1>MOTION</h1>
+    </div>
 
-        .message {
-            text-align: center;
-            font-size: 24px;
-        }
-    </style>
+    <div class="motion-img">
+        <img src="../videos/motion.png" alt="Main">
+    </div>
+
+    <div class="motion-section">
+        <div class="project-title">
+            I've been editing videos since 2017 across multiple platforms including CapCut, Filmora, and Adobe Premiere Pro. My work spans promotional content for UK Berkeley organisations and/or student clubs, marketing materials that follow trending formats, and personal projects for my dog style YouTube channel. Whether it's crafting short form content for social trends or developing aesthetic travel videos, I enjoy taking editing as a creative outlet to tell stories, match energy with music and keep up with the latest trends.
+        </div>
+
+        <div class="vid-tools-section">
+            <h3>Apps I use</h3>
+            <div class="vid-tools-icons1">
+                <img src="../images/logos/capcut.png" alt="Logo 1">
+                <img src="../images/logos/premier.png" alt="Logo 2">
+                <img src="../images/logos/filmora.png" alt="Logo 3">
+            </div>
+
+            <h3>Shared On Platforms</h3>
+            <div class="vid-tools-icons2">
+                <img src="../images/logos/instagram.png" alt="Logo 1">
+                <img src="../images/logos/tiktok.png" alt="Logo 2">
+                <img src="../images/logos/yt.png" alt="Logo 3">
+                <img src="../images/logos/fb.png" alt="Logo 4">
+            </div>
+        </div>
+    </div>
+
+    <div class="vid-section">
+        <div class="vid-section-title">
+            Videos made for the following organizations: 
+            <br>
+            <br>
+            - UC Berkeley's Center for Organization Advising and Student Involvement Services
+            <br>
+            - Blue & Gold Yearbook</h3>
+        </div>
+
+        <div class="videos">
+            <video controls>
+                <source src="../videos/b&g1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <video controls>
+                <source src="../videos/oasis1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <video controls>
+                <source src="../videos/oasis2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <video controls>
+                <source src="../videos/oasis3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <button class="carousel-nav carousel-prev">❮</button>
+            <button class="carousel-nav carousel-next">❯</button>
+        </div>
+
+        <div class="video-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('.videos video');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            
+            let currentVideoIndex = 0;
+
+            // Show first video initially
+            if (videos.length > 0) {
+                videos[0].classList.add('active');
+            }
+            
+            function showVideo(index) {
+                videos.forEach(video => video.classList.remove('active'));
+                if (videos[index]) videos[index].classList.add('active');
+
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+            }
+            
+            nextBtn.addEventListener('click', () => {
+                currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+                showVideo(currentVideoIndex);
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+                showVideo(currentVideoIndex);
+            });
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentVideoIndex = index;
+                    showVideo(currentVideoIndex);
+                });
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>
