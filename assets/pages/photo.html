@@ -7,6 +7,7 @@
     <title>Mia's Blog</title>
     <link rel="icon" type="image/png" href="../images/logo-black.png">
     <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/style6.css">
 
 </head>
 
@@ -14,10 +15,6 @@
     <img src="../icons/Meteors.svg" class="meteor-img">
     
     <div id="navbar"></div>
-
-    <div class="message-container">
-        <div class="message">Coming soon!</div>
-    </div>
 
     <script>
         fetch('../../navbar.html')  // adjust path depending on page folder
@@ -27,23 +24,134 @@
             });
     </script>
 
-    <style>
-        /* Keep the message centered only */
-        .message-container {
-            color: white;
-            display: flex;
-            margin: 0;
-            font-family: "Sawarabi Mincho", serif;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px); /* subtract navbar height approx. */
+    <div class="project-intro">
+        <h1>PHOTOGRAPHY</h1>
+    </div>
+
+    <div class="tools-section">
+            <h2>Tools:</h2>
+            <br>
+            <img src="../images/logos/lightroom.png" alt="Logo 1">
+            <img src="../images/logos/photoshop.png" alt="Logo 2">
+            <br>
+            <h2>Camera: 📸 Nikon D7500</h2>
+    </div>
+
+    <div class="project-section">
+        <div class="project-title">
+            Professional Portraits
+        </div>
+
+        <div class="image-grid" id="grid1">
+            <img src="../photos/portraits/1.jpg" 
+                alt="Por 1">
+            <img src="../photos/portraits/2.jpg"  
+                alt="Por 2">
+            <img src="../photos/portraits/3.jpg" 
+                alt="Por 3">
+            <img src="../photos/portraits/4.jpg" 
+                alt="Por 4">
+            <img src="../photos/portraits/5.jpg" 
+                alt="Por 5">
+            <img src="../photos/portraits/6.jpg" 
+                alt="Por 6">
+            <img src="../photos/portraits/7.jpg" 
+                alt="Por 7">
+        </div>
+    </div>
+    <div class="project-section">
+        <div class="project-title">
+            Photoshoots
+        </div>
+
+        <div class="image-grid" id="grid2">
+            <img src="../photos/photoshoots/1.jpg" 
+                alt="Pho 1">
+            <img src="../photos/photoshoots/2.jpg" 
+                alt="Pho 2">
+            <img src="../photos/photoshoots/3.jpg" 
+                alt="Pho 3">
+            <img src="../photos/photoshoots/4.jpg" 
+                alt="Pho 4">
+            <img src="../photos/photoshoots/5.jpg" 
+                alt="Pho 5">
+            <img src="../photos/photoshoots/6.jpg" 
+                alt="Pho 6">
+            <img src="../photos/photoshoots/7.jpg" 
+                alt="Pho 7">
+            <img src="../photos/photoshoots/8.jpg" 
+                alt="Pho 8">
+            <img src="../photos/photoshoots/9.jpg" 
+                alt="Pho 9">
+            <img src="../photos/photoshoots/10.jpg" 
+                alt="Pho 10">
+            <img src="../photos/photoshoots/11.jpg" 
+                alt="Pho 11">
+            <img src="../photos/photoshoots/12.jpg" 
+                alt="Pho 12">
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</button>
+            <img id="lightbox-img" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</button>
+        </div>
+    </div>
+
+    <script>
+        let currentImages = [];
+        let currentIndex = 0;
+
+        // Add click event to all images
+        document.querySelectorAll('.image-grid img').forEach((img, index) => {
+            img.addEventListener('click', function() {
+                const gallery = this.closest('.image-grid');
+                currentImages = Array.from(gallery.querySelectorAll('img'));
+                currentIndex = currentImages.indexOf(this);
+                openLightbox(this.src);
+            });
+        });
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        .message {
-            text-align: center;
-            font-size: 24px;
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
-    </style>
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = currentImages.length - 1;
+            if (currentIndex >= currentImages.length) currentIndex = 0;
+            document.getElementById('lightbox-img').src = currentImages[currentIndex].src;
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
+    </script>
 </body>
 
 </html>
